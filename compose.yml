@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql:latest
+    image: mysql:9.6.0-oraclelinux9
     volumes:
       - ./db_data-NOBU:/var/lib/mysql
     environment:
@@ -15,7 +15,7 @@ services:
   phpmyadmin:
     depends_on:
       - db
-    image: phpmyadmin
+    image: phpmyadmin:5.2.3-apache
     ports:
       - 8000:80
     environment:
